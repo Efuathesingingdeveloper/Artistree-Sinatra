@@ -7,10 +7,12 @@ class CreateUsers < ActiveRecord::Migration
       t.string :image_url
       t.string :social_media_handles
       t.string :bio
-      t.string :songs 
+      t.string :works
+      t.text :description
       t.string :intrest
       t.string :location
       t.string :related_achievements
+      t.timestamps null: false
     end
   end
 end
