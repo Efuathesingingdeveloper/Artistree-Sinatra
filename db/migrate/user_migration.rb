@@ -7,8 +7,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :image_url
       t.string :social_media_handles
       t.string :bio
-      t.string :works
-      t.text :description
       t.string :intrest
       t.string :location
       t.string :related_achievements
