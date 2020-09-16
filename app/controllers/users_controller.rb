@@ -2,8 +2,7 @@ class UsersController < ApplicationController
  
 
   get "/login" do
-    "login route!"
-    erb :login
+    erb :'users/login'
   end 
 
   post "/login" do
@@ -16,7 +15,7 @@ redirect "/users/#{user.id}"
 else
   redirect '/login'
 end 
-  
+end  
   get "/users/:id" do
  
     @user = User.find_by(id: params[:id])
@@ -36,6 +35,5 @@ end
 get '/logout' do
   session.clear
   redirect '/'
-end
 end
 end
