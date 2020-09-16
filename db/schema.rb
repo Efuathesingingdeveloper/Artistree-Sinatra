@@ -13,21 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20200915151827) do
 
-  create_table "artist_pages", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.string   "image_url"
-    t.string   "social_media_handles"
-    t.string   "bio"
-    t.string   "works"
-    t.text     "description"
-    t.integer  "user_id"
-    t.string   "location"
-    t.string   "interest"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string   "work"
     t.text     "description"
