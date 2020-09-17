@@ -26,5 +26,10 @@ helpers do
   def current_user
   User.find_by(id: session[:user_id])
   end
+
+  def authorized_to_edit?(post)
+    post.user == current_user
+  end
+
 end
 end

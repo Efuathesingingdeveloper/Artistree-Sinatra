@@ -7,7 +7,11 @@ end
 
 
 get "/posts/new" do 
+    if logged_in?
 erb :"posts/new"
+    else
+   flash[:error] ="You Must Be Logged in to add a leaf to your Artistree!"    
+redirect"/"
 end
 
 post "/posts" do
@@ -20,7 +24,6 @@ if post.save
         flash[:error]="your leaf was NOT added to your Artistree sucessfully: #{post.errors.full_messages.to_sentence}"
         redirect "/posts/new"
     end
-end
 
 get '/posts/:id' do
 @post = Post.find(params[:id])
@@ -29,8 +32,12 @@ end
 
 get '/posts/:id/edit' do
     @post = Post.find(params[:id])
-    erb :'/posts/edit'
-end
+    if authorized_to_edit?(@post)
+     erb :'/posts/edit'
+    else
+   flash[:error]= "You cannot edit another users Artistree!"
+   redirect'/posts'
+    end
 
 patch '/posts/:id' do
     @post = Post.find(parmas[:id])
@@ -42,5 +49,8 @@ delete '/posts/:id' do
     @post = Post.find(params[:id])
     @post.destroy
     redirect '/posts'
+end
+end
+end
 end
 end
