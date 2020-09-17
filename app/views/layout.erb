@@ -17,11 +17,22 @@
 
   
   <div class="wrapper">
-  
+
+  <% if flash[:error]%>
+<h3 style="color:red;"><%= flash[:error] %></h3>
+<% end %>
+
+<% if flash[:message]%>
+<h3 style="color:green;"><%= flash[:message] %></h3>
+<% end %>
+
+
   <div class="nav">
   <% if logged_in? %>
-  <a href="/posts">All Posts</a>
-  <a href="/posts/new">Create a Post</a>
+  <a href="/posts">Your Artistree</a>
+  <br><br>
+  <a href="/posts/new">Add a leaf to your Artistree</a>
+  <br><br>
   <a href="/logout">Log Out</a>
   <% end %>
 
