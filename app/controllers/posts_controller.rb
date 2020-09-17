@@ -1,10 +1,14 @@
 class PostsController < ApplicationController
 
 get '/posts' do
+    if logged_in?
  @post = Post.all
 erb :'posts/index'
+    else
+flash[:error] ="You Must Be Logged in to view the Artistree!"    
+redirect"/"
 end
-
+end 
 
 get "/posts/new" do 
     if logged_in?
