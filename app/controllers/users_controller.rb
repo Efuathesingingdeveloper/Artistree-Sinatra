@@ -18,7 +18,7 @@ else
   end 
 end  
 
-  get "/users/:id" do
+get "/users/:id" do
  
     @user = User.find_by(id: params[:id])
     erb :'users/show'
@@ -28,10 +28,15 @@ end
   erb :'/users/signup'
 end 
 
-post '/users' do
-  @user = User.create(params)
+post '/signup' do
+  @user = User.new(params)
+  if @user.save
   session[:user_id] = @user.id
   redirect"/users/#{@user.id}"
+  else
+    flash[:error]="Please fill out all fields to make an Artistree !"
+    redirect '/signup'
+  end
 end 
 
 get '/logout' do
