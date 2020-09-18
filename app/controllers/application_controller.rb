@@ -31,7 +31,7 @@ helpers do
     post.user == current_user
   end
   
-  def Unique_email?(email)
+  def unique_email?(email)
     email.user != current_user
   end
 

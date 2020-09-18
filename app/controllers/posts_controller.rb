@@ -49,8 +49,8 @@ get '/posts/:id/edit' do
 end
 
 patch '/posts/:id' do
-    @post = Post.find(parmas[:id])
-    @post.update(title: params[:work], description: params[:description], link: params[:link])
+    @post = Post.find(params[:id])
+    @post.update(work: params[:work], description: params[:description], link: params[:link])
 redirect "/posts/#{@post.id}"
 end 
 
