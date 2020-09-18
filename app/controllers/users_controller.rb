@@ -51,7 +51,7 @@ get '/users/:id/edit' do
    erb :'/users/edit'
   else
  flash[:error]= "You cannot edit another users Artistree!"
- redirect'/users'
+ redirect'/users/show'
   end
 end
 
