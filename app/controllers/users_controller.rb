@@ -40,6 +40,21 @@ post '/signup' do
   end
 end 
 
+get '/users/:id' do
+  @user = User.find(params[:id])
+  erb :'/users/edit'
+end
+
+get '/users/:id/edit' do
+  @user = User.find(params[:id])
+  if authorized_to_edit_user?(@user)
+   erb :'/users/edit'
+  else
+ flash[:error]= "You cannot edit another users Artistree!"
+ redirect'/users'
+  end
+end
+
 get '/logout' do
   session.clear
   redirect '/'

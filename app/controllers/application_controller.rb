@@ -31,6 +31,10 @@ helpers do
     post.user == current_user
   end
   
+  def authorized_to_edit_user?(user)
+    !!current_user
+  end
+
   def unique_email?(email)
     email.user != current_user
   end
