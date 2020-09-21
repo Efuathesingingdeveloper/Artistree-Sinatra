@@ -7,7 +7,14 @@ Artistree is a social media platform for up and coming artists or practitioners 
 
 #Install  and Use Instructions 
 
+Fork and Clone This Repository
+
+Bundle Install
+
+Run with Shotgun or Rack
+
 run "Shotgun"
+
 go to " http://localhost:9393/ " in your chosen browser
  login or create an a account
   click "Your Artistree" or " Add a Leaf to Your Artistree" to create a post or logout
