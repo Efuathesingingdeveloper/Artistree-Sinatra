@@ -7,7 +7,7 @@ erb :'posts/index'
     else
 flash[:error] ="You Must Be Logged in to view the Artistree!"    
 redirect"/"
-end
+    end
 end 
 
 get "/posts/new" do 
@@ -16,7 +16,7 @@ erb :"posts/new"
     else
    flash[:error] ="You Must Be Logged in to add a leaf to your Artistree!"    
 redirect"/"
-end
+    end
 end
 
 post "/posts" do
@@ -32,11 +32,10 @@ if post.save
 end
 
 get '/posts/:id' do
-    
     @post = Post.find(params[:id])
-
     erb :'/posts/show'
 end
+
 
 get '/posts/:id/edit' do
     @post = Post.find(params[:id])
@@ -58,6 +57,6 @@ delete '/posts/:id' do
     @post = Post.find(params[:id])
     @post.destroy
     redirect '/posts'
-end
+    end
 end
 
