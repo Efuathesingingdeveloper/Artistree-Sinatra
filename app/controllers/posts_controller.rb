@@ -19,6 +19,12 @@ redirect"/"
     end
 end
 
+get '/posts/users' do
+@post= current_user.posts
+    erb :"posts/index"
+end 
+
+
 post "/posts" do
     post= Post.new(work: params[:work], description: params[:description], link: params[:link], user_id: current_user.id)
 if post.save

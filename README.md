@@ -7,7 +7,14 @@ Artistree is a social media platform for up and coming artists or practitioners 
 
 #Install  and Use Instructions 
 
+Fork and Clone This Repository
+
+Bundle Install
+
+Run with Shotgun or Rack
+
 run "Shotgun"
+
 go to " http://localhost:9393/ " in your chosen browser
  login or create an a account
   click "Your Artistree" or " Add a Leaf to Your Artistree" to create a post or logout
@@ -15,7 +22,7 @@ go to " http://localhost:9393/ " in your chosen browser
 
  #contributor's guide
 
-When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the me, the owner of this repository before making a change. I can be reached at Georgycp@udel.edu
+When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with me, the owner of this repository before making a change. I can be reached at Georgycp@udel.edu
 
 
 
